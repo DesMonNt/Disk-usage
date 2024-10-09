@@ -40,7 +40,7 @@ class DiskAnalyzer:
         for directory, _, filenames in os.walk(self._root):
             for filename in filenames:
                 filepath = Path(directory) / filename
-                file_info = FileInfo(filepath)
+                file_info = FileInfo(filepath, self._root)
 
                 self._files.append(file_info)
                 self._progress_bar.update()
